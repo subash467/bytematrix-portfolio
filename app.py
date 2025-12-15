@@ -15,7 +15,7 @@ SCOPES = [
 ]
 
 # Read credentials from Render Environment Variable
-creds_json = json.loads(os.environ["GOOGLE_CREDS_JSON"])
+creds_json = json.loads(os.environ["GOOGLE_CREDENTIALS_JSON"])
 creds = Credentials.from_service_account_info(creds_json, scopes=SCOPES)
 
 client = gspread.authorize(creds)
@@ -80,4 +80,4 @@ def contact():
 
 # ---------------- START APP ----------------
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
